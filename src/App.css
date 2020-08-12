@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.contentDiv {
+    border: 1px solid transparent;
+}
+
+.contentDiv:hover {
+    background: #e1e1e1;
+    border: 1px solid #742323;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,6 +32,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
 
 .App-link {
   color: #61dafb;

@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import $ from "jquery";
+import Choices from "./Choices.js";
 
-function App() {
+class App extends Component {
+
+constructor(props) {
+  super(props);
+
+  this.state = {
+    newChoice: "",
+    listOfChoices: ["choice 1", "choice 2", "hello", "choice 4", "choice 5", "choice 6"],
+    selectedChoices: []
+  }
+}
+
+  callbackFunction = (childData) => {
+    this.setState({selectedChoices: childData})
+  }
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Choices min={3} max={6} initialChoices={this.state.listOfChoices}/>
+  )}
 }
 
 export default App;
